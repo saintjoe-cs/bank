@@ -236,6 +236,22 @@ ALTER TABLE ONLY loan
 
 
 --
+-- Name: branch_key; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY loan
+    ADD CONSTRAINT branch_key FOREIGN KEY (branchno, code) REFERENCES bank_branch(branchno, code);
+
+
+--
+-- Name: branch_key; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY account
+    ADD CONSTRAINT branch_key FOREIGN KEY (branchno, code) REFERENCES bank_branch(branchno, code);
+
+
+--
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
 
