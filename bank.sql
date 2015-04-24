@@ -236,6 +236,22 @@ ALTER TABLE ONLY loan
 
 
 --
+-- Name: ac_constraint; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY acct_cust
+    ADD CONSTRAINT ac_constraint FOREIGN KEY (acctno) REFERENCES account(acctno);
+
+
+--
+-- Name: ac_constraint; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY loan_cust
+    ADD CONSTRAINT ac_constraint FOREIGN KEY (loanno) REFERENCES loan(loanno);
+
+
+--
 -- Name: branch_key; Type: FK CONSTRAINT; Schema: public; Owner: brianc
 --
 
@@ -249,6 +265,22 @@ ALTER TABLE ONLY loan
 
 ALTER TABLE ONLY account
     ADD CONSTRAINT branch_key FOREIGN KEY (branchno, code) REFERENCES bank_branch(branchno, code);
+
+
+--
+-- Name: ss_constraint; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY acct_cust
+    ADD CONSTRAINT ss_constraint FOREIGN KEY (ssn) REFERENCES customer(ssn);
+
+
+--
+-- Name: ss_constraint; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY loan_cust
+    ADD CONSTRAINT ss_constraint FOREIGN KEY (ssn) REFERENCES customer(ssn);
 
 
 --
