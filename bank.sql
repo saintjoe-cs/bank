@@ -268,6 +268,14 @@ ALTER TABLE ONLY account
 
 
 --
+-- Name: fk_bankno; Type: FK CONSTRAINT; Schema: public; Owner: brianc
+--
+
+ALTER TABLE ONLY bank_branch
+    ADD CONSTRAINT fk_bankno FOREIGN KEY (code) REFERENCES bank(code);
+
+
+--
 -- Name: ss_constraint; Type: FK CONSTRAINT; Schema: public; Owner: brianc
 --
 
